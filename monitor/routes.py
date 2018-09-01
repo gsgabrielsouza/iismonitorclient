@@ -4,8 +4,6 @@ import psutil, json
 
 monitor_api = Blueprint('monitor_api', __name__, template_folder='templates')
 
-
-
 @monitor_api.route("/cpu")
 def getCPU():
     return json.dumps(psutil.cpu_percent())
@@ -18,8 +16,6 @@ def getMemory():
 @monitor_api.route("/diskpartitions")
 def getDisk():
     dps = psutil.disk_partitions()
-    fmt_str = "{:<8} {:<7} {:<7}"
-    print(psutil.disk_usage('C:\\'))
 
     hardDrives = []
     # hardDrives.append(fmt_str.format("Drive", "Type", "Opts"))
@@ -37,4 +33,3 @@ def getDisk():
             hardDrives.append(hd)
     #return json.dumps(dps[0])
     return json.dumps([p.__dict__ for p in hardDrives]) 
-
