@@ -22,7 +22,6 @@ def getDisk():
     for dp in dps:
         if dp.opts != 'cdrom' : 
             diskUsage = psutil.disk_usage(dp.device)
-            # ((986498199552 /1024) / 1024 ) / 1024 
             #                           KB          MB      GB          
             totalGB = (((diskUsage.total / 1024) / 1024) / 1024)
             usedGb = (((diskUsage.used / 1024) / 1024) / 1024)
@@ -31,18 +30,5 @@ def getDisk():
 
            # hardDrives.append(fmt_str.format(dp.device, dp.fstype, dp.opts))
             hardDrives.append(hd)
-    return json.dumps(dps)
-    #return json.dumps([p.__dict__ for p in hardDrives]) 
-
-@monitor_api.route("/services")
-def getServices(): 
-    services = psutil.win_service_get('smarapdnodejswebsocket.exe')
-    #services = psutil.process_iter(attrs='name')
-    #print(services[0].info['name'])
-    # ls = []
-    # for p in psutil.process_iter(attrs=['name']):
-    #     if p.info['name'] == 'smarapdnodejswebsocket.exe':
-            # ls.append(p)
-        #ls.append(p.info['name'])
-    print(services)
-    return json.dumps('ls')
+    #return json.dumps(dps)
+    return json.dumps([p.__dict__ for p in hardDrives]) 
