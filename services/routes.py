@@ -8,7 +8,7 @@ services_api = Blueprint('services_api', __name__, template_folder='templates')
 def getall(): 
     allServices = psutil.process_iter(attrs=['pid', 'name', 'username'])
     smarServices = []
-    smarServices.append(getJOB('MySQL57'))
+    smarServices.append(getJOB('todo'))
     return json.dumps([p.__dict__ for p in smarServices])
 
 
