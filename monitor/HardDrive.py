@@ -6,9 +6,6 @@ class HardDrive:
     Total = 0
     Slave = False
 
-    def __init__(self): 
-        self.Partition = ""
-
     def __init__(self, partition, percentUsed, total, used, free):
         self.Partition = partition
         self.PercentUsed = percentUsed
