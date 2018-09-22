@@ -1,4 +1,4 @@
-class HardDrive:
+class HardDriveDTO:
     Partition = ""
     PercentUsed  = 0
     Used = 0

@@ -1,4 +1,4 @@
-class Services:
+class ServicesDTO:
     name = ""
     status = ""
     startType = ""
