@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse, marshal_with, fields
 from flask import request
-from iismonitorpy.services.ServicesDTO import ServicesDTO
-import iismonitorpy.services.Service as appService 
+from iismonitorclient.services.ServicesDTO import ServicesDTO
+import iismonitorclient.services.Service as appService 
 import psutil, json, win32serviceutil
 
 parser = reqparse.RequestParser()

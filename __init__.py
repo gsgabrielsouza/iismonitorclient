@@ -1,17 +1,17 @@
 from flask import Flask, Blueprint, render_template
 from flask_restful import Api, Resource, url_for
 from apscheduler.schedulers.background import BackgroundScheduler
-from iismonitorpy.scheduler.schedulerJob import schedulerJob
-from iismonitorpy.monitor.api import CpuApi, MemoryApi, HardDriveApi
-from iismonitorpy.services.api import WindowsServicesListApi, WindowsServiceAction
+from iismonitorclient.scheduler.schedulerJob  import schedulerJob
+from iismonitorclient.monitor.api import CpuApi, MemoryApi, HardDriveApi
+from iismonitorclient.services.api import WindowsServicesListApi, WindowsServiceAction
 
 app = Flask(__name__)
 api_bp = Blueprint('api', __name__)
 api = Api(api_bp)
 
-from iismonitorpy.main.routes import home_api
-from iismonitorpy.monitor.api import CpuApi, MemoryApi, HardDriveApi
-from iismonitorpy.services.api import WindowsServiceAction, WindowsServicesListApi
+from iismonitorclient.main.routes import home_api
+from iismonitorclient.monitor.api import CpuApi, MemoryApi, HardDriveApi
+from iismonitorclient.services.api import WindowsServiceAction, WindowsServicesListApi
 
 api.add_resource(CpuApi, '/monitor/cpu')
 api.add_resource(MemoryApi, '/monitor/memory')

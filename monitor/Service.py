@@ -1,4 +1,4 @@
-from iismonitorpy.monitor.HardDriveDTO import HardDriveDTO
+from iismonitorclient.monitor.HardDriveDTO import HardDriveDTO
 import psutil
 
 

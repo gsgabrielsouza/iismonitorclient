@@ -1,5 +1,5 @@
-from iismonitorpy.services.EnumStatusService import EnumStatusService
-from iismonitorpy.services.ServicesDTO import ServicesDTO
+from iismonitorclient.services.EnumStatusService import EnumStatusService
+from iismonitorclient.services.ServicesDTO import ServicesDTO
 import psutil, win32serviceutil
 
 # class Service:

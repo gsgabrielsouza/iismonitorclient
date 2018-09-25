@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse, marshal_with, fields
-import iismonitorpy.monitor.Service as appService 
+import iismonitorclient.monitor.Service as appService 
 import psutil, json
 
 resource_fields = {

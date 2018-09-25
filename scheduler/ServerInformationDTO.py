@@ -1,4 +1,4 @@
-from iismonitorpy.monitor.HardDriveDTO import HardDriveDTO
+from iismonitorclient.monitor.HardDriveDTO import HardDriveDTO
 
 class ServerInformationDTO:
     MemoryPercent = 0.0
@@ -13,5 +13,5 @@ class ServerInformationDTO:
     def __repr__(self):
         info = f"Memory: {self.MemoryPercent}\nCPU: {self.CpuPercent}\nHD: "
         for item in self.HardDrives:
-            info = info + item.Partition + " Free: " + str(item.Free)
+            info = info + " - " +item.Partition + " Free: " + str(item.Free)
         return  info
